@@ -1,20 +1,9 @@
 package com.example.shorturl.common.util;
 
-/**
- * High-performance Base62 encoder/decoder using a pre-computed lookup table
- * for O(1) character-to-index mapping. Supports encoding non-negative longs
- * and decoding back with overflow protection.
- */
 public final class Base62Encoder {
 
     private static final String BASE62_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static final int BASE = BASE62_CHARS.length(); // 62
-
-    /**
-     * Pre-computed decode map: ASCII char → index in BASE62_CHARS.
-     * Filled with -1 for invalid characters, enabling O(1) lookup
-     * instead of String.indexOf() which is O(n).
-     */
     private static final int[] DECODE_MAP = new int[128];
 
     static {

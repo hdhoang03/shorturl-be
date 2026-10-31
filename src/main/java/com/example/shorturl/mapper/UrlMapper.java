@@ -15,6 +15,7 @@ public interface UrlMapper {
     @Mapping(target = "isActive", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "expiresAt", ignore = true)
     ShortUrl toEntity(ShortenUrlRequest request);
 
     @Mapping(target = "shortUrl", ignore = true)
